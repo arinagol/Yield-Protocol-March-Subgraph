@@ -1,0 +1,53 @@
+type _Approval @entity {
+  id: ID!
+  count: BigInt!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  value: BigInt!
+}
+
+type _Delegate @entity {
+  id: ID!
+  count: BigInt!
+  user: Bytes! # address
+  delegate: Bytes! # address
+  enabled: Boolean!
+}
+
+type _GrantedAccess @entity {
+  id: ID!
+  count: BigInt!
+  access: Bytes! # address
+  signature: Bytes! # address
+}
+
+type _Matured @entity {
+  id: ID!
+  count: BigInt!
+  rate: BigInt!
+  chi: BigInt!
+}
+
+type _OwnershipTransferred @entity {
+  id: ID!
+  count: BigInt!
+  previousOwner: Bytes!
+  newOwner: Bytes!
+}
+
+type _Redeemed @entity {
+  id: ID!
+  count: BigInt!
+  from: Bytes! # address
+  to: Bytes! # address
+  fyDaiIn: BigInt!
+  daiOut: BigInt!
+}
+
+type _Transfer @entity {
+  id: ID!
+  count: BigInt!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt!
+}
